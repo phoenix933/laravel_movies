@@ -1,98 +1,162 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel</title>
+@section('style')
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css'>
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+    <link href="{{ url('css/index.css') }}" rel="stylesheet">
+@endsection
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+@section('script')
+    <script src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script>
+    <script src='//production-assets.codepen.io/assets/editor/live/events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd.js'></script>
+    <script src='//production-assets.codepen.io/assets/editor/live/css_live_reload_init-2c0dc5167d60a5af3ee189d570b1835129687ea2a61bee3513dee3a50c115a77.js'></script>
+@endsection
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+@section('content')
+    <div class="container-inner">
+    	<div class="movie-card">
+    		<div class="movie-header manOfSteel">
+    			<div class="header-icon-container">
+    				<a href="#">
+    					<i class="material-icons header-icon"></i>
+    				</a>
+    			</div>
+    		</div><!--movie-header-->
+    		<div class="movie-content">
+    			<div class="movie-content-header">
+    				<a href="#">
+    					<h3 class="movie-title">Man of Steel</h3>
+    				</a>
+    				<div class="imax-logo"></div>
+    			</div>
+    			<div class="movie-info">
+    				<div class="info-section">
+    					<label>Date & Time</label>
+    					<span>Sun 8 Sept - 10:00PM</span>
+    				</div><!--date,time-->
+    				<div class="info-section">
+    					<label>Screen</label>
+    					<span>03</span>
+    				</div><!--screen-->
+    				<div class="info-section">
+    					<label>Row</label>
+    					<span>F</span>
+    				</div><!--row-->
+    				<div class="info-section">
+    					<label>Seat</label>
+    					<span>21,22</span>
+    				</div><!--seat-->
+    			</div>
+    		</div><!--movie-content-->
+    	</div><!--movie-card-->
 
-            .full-height {
-                height: 100vh;
-            }
+    	<div class="movie-card">
+    		<div class="movie-header babyDriver">
+    			<div class="header-icon-container">
+    				<a href="#">
+    					<i class="material-icons header-icon"></i>
+    				</a>
+    			</div>
+    		</div><!--movie-header-->
+    		<div class="movie-content">
+    			<div class="movie-content-header">
+    				<a href="#">
+    					<h3 class="movie-title">Baby Driver</h3>
+    				</a>
+    				<div class="imax-logo"></div>
+    			</div>
+    			<div class="movie-info">
+    				<div class="info-section">
+    					<label>Date & Time</label>
+    					<span>Tue 4 July - 05:00PM</span>
+    				</div><!--date,time-->
+    				<div class="info-section">
+    					<label>Screen</label>
+    					<span>01</span>
+    				</div><!--screen-->
+    				<div class="info-section">
+    					<label>Row</label>
+    					<span>H</span>
+    				</div><!--row-->
+    				<div class="info-section">
+    					<label>Seat</label>
+    					<span>15</span>
+    				</div><!--seat-->
+    			</div>
+    		</div><!--movie-content-->
+    	</div><!--movie-card-->
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+    	<div class="movie-card">
+    		<div class="movie-header theDarkTower">
+    			<div class="header-icon-container">
+    				<a href="#">
+    					<i class="material-icons header-icon"></i>
+    				</a>
+    			</div>
+    		</div><!--movie-header-->
+    		<div class="movie-content">
+    			<div class="movie-content-header">
+    				<a href="#">
+    					<h3 class="movie-title">The Dark Tower</h3>
+    				</a>
+    				<div class="imax-logo"></div>
+    			</div>
+    			<div class="movie-info">
+    				<div class="info-section">
+    					<label>Date & Time</label>
+    					<span>Wed 16 Aug - 07:00PM</span>
+    				</div><!--date,time-->
+    				<div class="info-section">
+    					<label>Screen</label>
+    					<span>06</span>
+    				</div><!--screen-->
+    				<div class="info-section">
+    					<label>Row</label>
+    					<span>C</span>
+    				</div><!--row-->
+    				<div class="info-section">
+    					<label>Seat</label>
+    					<span>18</span>
+    				</div><!--seat-->
+    			</div>
+    		</div><!--movie-content-->
+    	</div><!--movie-card-->
 
-            .position-ref {
-                position: relative;
-            }
+    	<div class="movie-card">
+    		<div class="movie-header bladeRunner2049">
+    			<div class="header-icon-container">
+    				<a href="#">
+    					<i class="material-icons header-icon"></i>
+    				</a>
+    			</div>
+    		</div><!--movie-header-->
+    		<div class="movie-content">
+    			<div class="movie-content-header">
+    				<a href="#">
+    					<h3 class="movie-title">Blade Runner 2049</h3>
+    				</a>
+    				<div class="imax-logo"></div>
+    			</div>
+    			<div class="movie-info">
+    				<div class="info-section">
+    					<label>Date & Time</label>
+    					<span>Mon 16 Oct - 10:00PM</span>
+    				</div><!--date,time-->
+    				<div class="info-section">
+    					<label>Screen</label>
+    					<span>06</span>
+    				</div><!--screen-->
+    				<div class="info-section">
+    					<label>Row</label>
+    					<span>D</span>
+    				</div><!--row-->
+    				<div class="info-section">
+    					<label>Seat</label>
+    					<span>05,06</span>
+    				</div><!--seat-->
+    			</div>
+    		</div><!--movie-content-->
+    	</div><!--movie-card-->
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+    </div><!--container-->
+@endsection
