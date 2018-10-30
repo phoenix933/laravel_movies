@@ -27,8 +27,8 @@ a:hover {
 
 .container-inner {
   margin: 0 auto;
-  width: 780px;
-  height: 640px;
+  min-height: 640px;
+  height: auto;
   background: #f0f0ed;
   border-radius: 5px;
   position: relative;
@@ -72,51 +72,28 @@ a:hover {
 .details {
   padding: 190px 0 0 280px;
 }
-.details .title1 {
+.details .title {
   color: white;
   font-size: 44px;
   margin-bottom: 13px;
   position: relative;
 }
-.details .title1 span {
-  position: absolute;
-  top: 3px;
-  margin-left: 12px;
-  background: #c4af3d;
-  border-radius: 5px;
-  color: #544c21;
-  font-size: 14px;
-  padding: 0px 4px;
-}
-.details .title2 {
-  color: #c7c1ba;
-  font-size: 23px;
-  font-weight: 300;
-  margin-bottom: 15px;
-}
-.details .likes {
+
+.details .country {
   margin-left: 24px;
-}
-.details .likes:before {
-  content: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/icon_like.png");
-  position: relative;
-  top: 2px;
-  padding-right: 7px;
 }
 
 .description {
   bottom: 0px;
-  height: 200px;
+  min-height: 200px;
+  height: auto;
   font-size: 16px;
   line-height: 26px;
   color: #b1b0ac;
 }
 
 .column1 {
-  padding-left: 50px;
   padding-top: 120px;
-  width: 220px;
-  float: left;
   text-align: center;
 }
 
@@ -135,11 +112,7 @@ a:hover {
 }
 
 .column2 {
-  padding-left: 41px;
   padding-top: 30px;
-  margin-left: 20px;
-  width: 480px;
-  float: left;
 }
 
 .avatars {
