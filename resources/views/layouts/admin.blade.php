@@ -89,7 +89,7 @@
           <li class="breadcrumb-item">
             <a href="{{ route('adminPanel') }}">Admin Panel</a>
           </li>
-          <li class="breadcrumb-item active">Dashboard</li>
+          <li class="breadcrumb-item active">{{ \Request::route()->getName() }}</li>
           <!-- Breadcrumb Menu-->
         </ol>
         <div class="container-fluid">
