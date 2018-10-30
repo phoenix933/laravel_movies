@@ -11,4 +11,8 @@ class AdminController extends Controller
         $this->middleware('auth');
 		$this->middleware('role:admin');
     }
+    public function panel()
+    {
+        return view('admin/panel');
+    }
 }
