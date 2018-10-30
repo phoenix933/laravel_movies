@@ -22,6 +22,7 @@
     				</a>
     			</div>
     		</div><!--movie-header-->
+            <img src="http://henrycavill.org/images/Films/2013-Man-of-Steel/posters/3-Walmart-Superman-a.jpg" alt="manOfSteel" class="moviebg">
     		<div class="movie-content">
     			<div class="movie-content-header">
     				<a href="#">
@@ -51,13 +52,14 @@
     	</div><!--movie-card-->
 
     	<div class="movie-card">
-    		<div class="movie-header babyDriver">
+    		<div class="movie-header">
     			<div class="header-icon-container">
-    				<a href="#">
-    					<i class="material-icons header-icon"></i>
+                    <a href="#">
+                        <i class="material-icons header-icon"></i>
     				</a>
     			</div>
     		</div><!--movie-header-->
+            <img src="http://www.gstatic.com/tv/thumb/v22vodart/13259415/p13259415_v_v8_ae.jpg" alt="babyDriver" class="moviebg">
     		<div class="movie-content">
     			<div class="movie-content-header">
     				<a href="#">
@@ -87,13 +89,14 @@
     	</div><!--movie-card-->
 
     	<div class="movie-card">
-    		<div class="movie-header theDarkTower">
+    		<div class="movie-header">
     			<div class="header-icon-container">
     				<a href="#">
     					<i class="material-icons header-icon"></i>
     				</a>
     			</div>
     		</div><!--movie-header-->
+            <img src="http://cdn.collider.com/wp-content/uploads/2017/03/the-dark-tower-poster.jpg" alt="theDarkTower" class="moviebg">
     		<div class="movie-content">
     			<div class="movie-content-header">
     				<a href="#">
@@ -123,13 +126,14 @@
     	</div><!--movie-card-->
 
     	<div class="movie-card">
-    		<div class="movie-header bladeRunner2049">
+    		<div class="movie-header">
     			<div class="header-icon-container">
     				<a href="#">
     					<i class="material-icons header-icon"></i>
     				</a>
     			</div>
     		</div><!--movie-header-->
+            <img src="http://cdn.collider.com/wp-content/uploads/2017/05/blade-runner-2049-poster-ryan-gosling.jpeg" alt="bladeRunner" class="moviebg">
     		<div class="movie-content">
     			<div class="movie-content-header">
     				<a href="#">

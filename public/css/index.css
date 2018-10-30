@@ -50,6 +50,7 @@ a:hover {
 }
 
 .movie-card {
+    position: relative;
   background: #ffffff;
   box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.1);
   width: 100%;
@@ -60,6 +61,7 @@ a:hover {
 }
 
 .movie-header {
+    position: absolute;
   padding: 0;
   margin: 0;
   height: 367px;
@@ -69,26 +71,9 @@ a:hover {
   border-top-right-radius: 10px;
 }
 
-.manOfSteel {
-  background: url("http://henrycavill.org/images/Films/2013-Man-of-Steel/posters/3-Walmart-Superman-a.jpg");
-  background-size: cover;
-}
-
-.babyDriver {
-  background: url("http://www.gstatic.com/tv/thumb/v22vodart/13259415/p13259415_v_v8_ae.jpg");
-  background-size: cover;
-}
-
-.theDarkTower {
-  background: url("http://cdn.collider.com/wp-content/uploads/2017/03/the-dark-tower-poster.jpg");
-  background-size: cover;
-  background-position: 100% 100%;
-}
-
-.bladeRunner2049 {
-  background: url("http://cdn.collider.com/wp-content/uploads/2017/05/blade-runner-2049-poster-ryan-gosling.jpeg");
-  background-size: cover;
-  background-position: 100% 80%;
+.moviebg {
+  height: 367px;
+  width: 100%;
 }
 
 .header-icon-container {
