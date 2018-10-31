@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Genre;
 
 class FilmController extends Controller
 {
@@ -30,7 +31,8 @@ class FilmController extends Controller
      */
     public function create()
     {
-        return view('admin/films/create');
+        $genres = Genre::all();
+        return view('admin/films/create')->with('genres', $genres);
     }
 
     /**

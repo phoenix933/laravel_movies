@@ -8,7 +8,7 @@
 
 @section('content')
     <div class="card">
-        <form action="{{ route('films.create') }}" method="post">
+        <form action="{{ route('films.create') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="card-header">
             <strong>Add</strong> Film</div>
@@ -66,13 +66,25 @@
                         <div class="form-group">
                             <label for="genre">genre</label>
                             <select class="form-control" id="genre" multiple genre>
-                              <option>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                              <option>5</option>
+                                @foreach ($genres as $genre)
+                                    <option value="{{ $genre->id }}">{{ $genre->title }}</option>
+                                @endforeach
                             </select>
                             @if ($errors->has('genre'))<span class="help-block">{{ $errors->first('genre') }}</span>@endif
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group"><br>
+                            <label class="col-form-label" for="photo">photo</label>
+                            <input id="file-input" type="file" name="photo" required>
+                            @if ($errors->has('photo'))<span class="help-block">{{ $errors->first('photo') }}</span>@endif
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group"><br>
+                            <label class="col-form-label" for="wallpaper">wallpaper</label>
+                            <input id="file-input" type="file" name="wallpaper" required>
+                            @if ($errors->has('wallpaper'))<span class="help-block">{{ $errors->first('wallpaper') }}</span>@endif
                         </div>
                     </div>
                 </div>
