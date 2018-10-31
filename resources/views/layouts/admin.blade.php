@@ -75,8 +75,12 @@
             </li>
             <li class="nav-title">Film</li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('filmList') }}">
-                <i class="nav-icon icon-drop"></i> Films List</a>
+              <a class="nav-link" href="{{ route('films.create') }}">
+                <i class="nav-icon icon-plus"></i> Add Film</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('films.index') }}">
+                <i class="nav-icon icon-film"></i> Films List</a>
             </li>
           </ul>
         </nav>
