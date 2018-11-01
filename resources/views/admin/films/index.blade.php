@@ -63,7 +63,7 @@
             </table>
             <nav>
               <ul class="pagination">
-
+                {{ $films->links() }}
               </ul>
             </nav>
           </div>

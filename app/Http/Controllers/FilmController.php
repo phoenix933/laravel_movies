@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Genre;
 use App\Film;
+use File;
 
 class FilmController extends Controller
 {
@@ -95,7 +96,9 @@ class FilmController extends Controller
      */
     public function edit($id)
     {
-        //
+        $film = Film::find($id);
+        $genres = Genre::all();
+        return view('admin/films/edit')->with('film', $film)->with('genres', $genres);
     }
 
     /**
@@ -107,7 +110,37 @@ class FilmController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'release_date' => 'required',
+            'rating' => 'required',
+            'ticket_price' => 'required',
+            'country' => 'required',
+            // 'genre' => 'required',
+            'photo' => 'image',
+        ]);
+        $film = Film::find($id);
+        $film->name = $request->name;
+        $film->description = $request->description;
+        $film->release_date = $request->release_date;
+        $film->rating = $request->rating;
+        $film->ticket_price = $request->ticket_price;
+        $film->country = $request->country;
+        $path = null;
+        if ($request->hasFile('photo'))
+        {
+            if(File::exists(ltrim($film->photo, '/')))
+                File::delete(ltrim($film->photo, '/'));
+            $random = date("Y_m_d_");
+            $file_name = $request->photo->getClientOriginalName();
+            $request->photo->move('uploads', $random.$file_name);
+            $path = '/uploads/'. $random.$file_name;
+            $film->photo = $path;
+        }
+        $film->save();
+        $film->genres()->attach($request->genre);
+        return redirect()->back()->with('success', 'Film Edited Successfully.');
     }
 
     /**
@@ -118,6 +151,9 @@ class FilmController extends Controller
      */
     public function destroy($id)
     {
+        $film = Film::find($id);
+        if(File::exists(ltrim($film->photo, '/')))
+            File::delete(ltrim($film->photo, '/'));
         Film::destroy($id);
         return redirect()->back();
     }
