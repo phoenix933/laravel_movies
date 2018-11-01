@@ -22,7 +22,8 @@ class FilmController extends Controller
 
     public function index()
     {
-        return view('admin/films/index');
+        $films = Film::paginate(15);
+        return view('admin/films/index')->with('films', $films);
     }
 
     /**
@@ -117,6 +118,7 @@ class FilmController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Film::destroy($id);
+        return redirect()->back();
     }
 }
