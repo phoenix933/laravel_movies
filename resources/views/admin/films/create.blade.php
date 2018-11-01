@@ -71,7 +71,7 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="genre">genre</label>
-                            <select class="form-control{{ $errors->has('genre') ? ' is-invalid' : '' }}" id="genre" name="genre" multiple genre>
+                            <select class="form-control{{ $errors->has('genre') ? ' is-invalid' : '' }}" id="genre" name="genre[]" multiple genre>
                                 @foreach ($genres as $genre)
                                     <option value="{{ $genre->id }}">{{ $genre->title }}</option>
                                 @endforeach

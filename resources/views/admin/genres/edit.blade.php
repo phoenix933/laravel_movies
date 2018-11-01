@@ -33,8 +33,6 @@
             <div class="card-footer">
                 <button class="btn btn-sm btn-primary" type="submit">
                   <i class="fa fa-dot-circle-o"></i> Edit Genre</button>
-                <button class="btn btn-sm btn-danger" type="reset">
-                  <i class="fa fa-ban"></i> Reset</button>
             </div>
         </form>
     </div>

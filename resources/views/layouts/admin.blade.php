@@ -82,6 +82,7 @@
               <a class="nav-link" href="{{ route('films.index') }}">
                 <i class="nav-icon icon-film"></i> Films List</a>
             </li>
+            <li class="nav-title">Genre</li>
             <li class="nav-item">
               <a class="nav-link" href="{{ route('genres.create') }}">
                 <i class="nav-icon icon-plus"></i> Add Genre</a>

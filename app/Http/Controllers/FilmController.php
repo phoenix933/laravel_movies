@@ -139,7 +139,7 @@ class FilmController extends Controller
             $film->photo = $path;
         }
         $film->save();
-        $film->genres()->attach($request->genre);
+        $film->genres()->sync($request->genre);
         return redirect()->back()->with('success', 'Film Edited Successfully.');
     }
 

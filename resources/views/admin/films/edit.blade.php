@@ -72,9 +72,9 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="genre">genre</label>
-                            <select class="form-control{{ $errors->has('genre') ? ' is-invalid' : '' }}" id="genre" name="genre" multiple genre>
+                            <select class="form-control{{ $errors->has('genre') ? ' is-invalid' : '' }}" id="genre" name="genre[]" multiple genre>
                                 @foreach ($genres as $genre)
-                                    <option value="{{ $genre->id }}" @if($films->genres()->contains($genre->id)) selected @endif>{{ $genre->title }}</option>
+                                    <option value="{{ $genre->id }}" @if($film->genres->contains($genre->id)) selected @endif>{{ $genre->title }}</option>
                                 @endforeach
                             </select>
                             @if ($errors->has('genre'))<div class="invalid-feedback">{{ $errors->first('genre') }}</div>@endif
@@ -103,8 +103,6 @@
             <div class="card-footer">
                 <button class="btn btn-sm btn-primary" type="submit">
                   <i class="fa fa-dot-circle-o"></i> Edit Film</button>
-                <button class="btn btn-sm btn-danger" type="reset">
-                  <i class="fa fa-ban"></i> Reset</button>
             </div>
         </form>
     </div>
