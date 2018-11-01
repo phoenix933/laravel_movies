@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Film extends Model
 {
     protected $fillable = [
-        'name', 'description', 'release_date', 'rating', 'ticket_price', 'country', 'Genre', 'photo', 'wallpaper'
+        'name', 'description', 'release_date', 'rating', 'ticket_price', 'country', 'Genre', 'photo'
     ];
 
     public function comments()
@@ -17,6 +17,6 @@ class Film extends Model
 
     public function genres()
     {
-        return $this->belongsToMany('App\Genre', 'film_genres', 'film_id', 'genre_id')->withTimeStampt();
+        return $this->belongsToMany('App\Genre', 'film_genres', 'film_id', 'genre_id')->withTimestamps();
     }
 }

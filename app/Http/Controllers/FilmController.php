@@ -51,9 +51,8 @@ class FilmController extends Controller
             'rating' => 'required',
             'ticket_price' => 'required',
             'country' => 'required',
-            // 'genre' => 'required',
+            'genre' => 'required',
             'photo' => 'required|image',
-            'wallpaper' => 'image',
         ]);
         $film = new Film;
         $film->name = $request->name;
@@ -70,14 +69,6 @@ class FilmController extends Controller
             $request->photo->move('uploads', $random.$file_name);
             $path = '/uploads/'. $random.$file_name;
             $film->photo = $path;
-        }
-        if ($request->hasFile('wallpaper'))
-        {
-            $random = date("Y_m_d_");
-            $file_name = $request->wallpaper->getClientOriginalName();
-            $request->wallpaper->move('uploads', $random.$file_name);
-            $path = '/uploads/'. $random.$file_name;
-            $film->wallpaper = $path;
         }
         $film->save();
         $film->genres()->attach($request->genre);

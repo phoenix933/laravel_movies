@@ -20,8 +20,8 @@ class CreateFilmsTable extends Migration
             $table->timestamp('release_date');
             $table->tinyInteger('rating');
             $table->integer('ticket_price');
+            $table->text('country');
             $table->string('photo');
-            $table->string('wallpaper');
             $table->timestamps();
         });
     }

@@ -24,9 +24,9 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="title">title</label>
-                            <input class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}" id="title" type="text" value="{{ old('title') }}" name="title" required autofocus>
-                            @if ($errors->has('title'))<div class="invalid-feedback">{{ $errors->first('title') }}</div>@endif
+                            <label for="name">name</label>
+                            <input class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" id="name" type="text" value="{{ old('name') }}" name="name" required autofocus>
+                            @if ($errors->has('name'))<div class="invalid-feedback">{{ $errors->first('name') }}</div>@endif
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -86,13 +86,6 @@
                             <label class="col-form-label" for="photo">photo</label>
                             <input class="form-control{{ $errors->has('photo') ? ' is-invalid' : '' }}" id="file-input" type="file" name="photo" required>
                             @if ($errors->has('photo'))<div class="invalid-feedback">{{ $errors->first('photo') }}</div>@endif
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group"><br>
-                            <label class="col-form-label" for="wallpaper">wallpaper</label>
-                            <input class="form-control{{ $errors->has('wallpaper') ? ' is-invalid' : '' }}" id="file-input" type="file" name="wallpaper">
-                            @if ($errors->has('wallpaper'))<div class="invalid-feedback">{{ $errors->first('wallpaper') }}</div>@endif
                         </div>
                     </div>
                 </div>
