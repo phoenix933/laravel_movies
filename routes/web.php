@@ -20,3 +20,4 @@ Route::get('/film/{id}', 'MainController@film')->name('film');
 //Admin Panel
 Route::get('/panel', 'AdminController@panel')->name('adminPanel');
 Route::resource('/panel/films', 'FilmController');
+Route::resource('/panel/genres', 'GenreController');

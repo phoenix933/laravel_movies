@@ -82,6 +82,14 @@
               <a class="nav-link" href="{{ route('films.index') }}">
                 <i class="nav-icon icon-film"></i> Films List</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('genres.create') }}">
+                <i class="nav-icon icon-plus"></i> Add Genre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('genres.index') }}">
+                <i class="nav-icon icon-emotsmile"></i> Genres List</a>
+            </li>
           </ul>
         </nav>
         <button class="sidebar-minimizer brand-minimizer" type="button"></button>

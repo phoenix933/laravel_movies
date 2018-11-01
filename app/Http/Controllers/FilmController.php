@@ -117,7 +117,7 @@ class FilmController extends Controller
             'rating' => 'required',
             'ticket_price' => 'required',
             'country' => 'required',
-            // 'genre' => 'required',
+            'genre' => 'required',
             'photo' => 'image',
         ]);
         $film = Film::find($id);
