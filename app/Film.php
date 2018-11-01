@@ -17,6 +17,6 @@ class Film extends Model
 
     public function genres()
     {
-        return $this->belongsToMany('App\Genre', 'film_genres', 'film_id', 'genre_id');
+        return $this->belongsToMany('App\Genre', 'film_genres', 'film_id', 'genre_id')->withTimeStampt();
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Genre;
+use App\Film;
 
 class FilmController extends Controller
 {
@@ -43,7 +44,44 @@ class FilmController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'release_date' => 'required',
+            'rating' => 'required',
+            'ticket_price' => 'required',
+            'country' => 'required',
+            // 'genre' => 'required',
+            'photo' => 'required|image',
+            'wallpaper' => 'image',
+        ]);
+        $film = new Film;
+        $film->name = $request->name;
+        $film->description = $request->description;
+        $film->release_date = $request->release_date;
+        $film->rating = $request->rating;
+        $film->ticket_price = $request->ticket_price;
+        $film->country = $request->country;
+        $path = null;
+        if ($request->hasFile('photo'))
+        {
+            $random = date("Y_m_d_");
+            $file_name = $request->photo->getClientOriginalName();
+            $request->photo->move('uploads', $random.$file_name);
+            $path = '/uploads/'. $random.$file_name;
+            $film->photo = $path;
+        }
+        if ($request->hasFile('wallpaper'))
+        {
+            $random = date("Y_m_d_");
+            $file_name = $request->wallpaper->getClientOriginalName();
+            $request->wallpaper->move('uploads', $random.$file_name);
+            $path = '/uploads/'. $random.$file_name;
+            $film->wallpaper = $path;
+        }
+        $film->save();
+        $film->genres()->attach($request->genre);
+        return redirect()->back();
     }
 
     /**
