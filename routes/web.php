@@ -16,6 +16,7 @@ Auth::routes();
 Route::get('/', 'MainController@welcome')->name('welcome');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/film/{id}', 'MainController@film')->name('film');
+Route::post('/send_comment', 'MainController@sendComment')->name('send_comment');
 
 //Admin Panel
 Route::get('/panel', 'AdminController@panel')->name('adminPanel');

@@ -14,117 +14,36 @@
 
 @section('content')
     <div class="container-inner">
-    	<div class="movie-card">
-    		<div class="movie-header manOfSteel">
-    			<div class="header-icon-container">
-    				<a href="#">
-    					<i class="material-icons header-icon"></i>
-    				</a>
-    			</div>
-    		</div><!--movie-header-->
-            <img src="http://henrycavill.org/images/Films/2013-Man-of-Steel/posters/3-Walmart-Superman-a.jpg" alt="manOfSteel" class="moviebg">
-    		<div class="movie-content">
-    			<div class="movie-content-header">
-    				<a href="#">
-    					<h3 class="movie-title">Man of Steel</h3>
-    				</a>
-    			</div>
-    			<div class="movie-info">
-    				<div class="info-section">
-    					<label>Release Date & Time</label>
-    					<span>Sun 8 Sept - 10:00PM</span>
-    				</div><!--date,time-->
-    				<div class="info-section">
-    					<label>Ticket Price</label>
-    					<span>50 $</span>
-    				</div><!--ticket price-->
-    			</div>
-    		</div><!--movie-content-->
-    	</div><!--movie-card-->
 
-    	<div class="movie-card">
-    		<div class="movie-header">
-    			<div class="header-icon-container">
-                    <a href="#">
-                        <i class="material-icons header-icon"></i>
-    				</a>
-    			</div>
-    		</div><!--movie-header-->
-            <img src="http://www.gstatic.com/tv/thumb/v22vodart/13259415/p13259415_v_v8_ae.jpg" alt="babyDriver" class="moviebg">
-    		<div class="movie-content">
-    			<div class="movie-content-header">
-    				<a href="#">
-    					<h3 class="movie-title">Baby Driver</h3>
-    				</a>
-    			</div>
-    			<div class="movie-info">
-    				<div class="info-section">
-    					<label>Release Date & Time</label>
-    					<span>Tue 4 July - 05:00PM</span>
-    				</div><!--date,time-->
-    				<div class="info-section">
-    					<label>Ticket Price</label>
-    					<span>50 $</span>
-    				</div><!--ticket price-->
-    			</div>
-    		</div><!--movie-content-->
-    	</div><!--movie-card-->
-
-    	<div class="movie-card">
-    		<div class="movie-header">
-    			<div class="header-icon-container">
-    				<a href="#">
-    					<i class="material-icons header-icon"></i>
-    				</a>
-    			</div>
-    		</div><!--movie-header-->
-            <img src="http://cdn.collider.com/wp-content/uploads/2017/03/the-dark-tower-poster.jpg" alt="theDarkTower" class="moviebg">
-    		<div class="movie-content">
-    			<div class="movie-content-header">
-    				<a href="#">
-    					<h3 class="movie-title">The Dark Tower</h3>
-    				</a>
-    			</div>
-    			<div class="movie-info">
-    				<div class="info-section">
-    					<label>Release Date & Time</label>
-    					<span>Wed 16 Aug - 07:00PM</span>
-    				</div><!--date,time-->
-    				<div class="info-section">
-    					<label>Ticket Price</label>
-    					<span>50 $</span>
-    				</div><!--ticket price-->
-    			</div>
-    		</div><!--movie-content-->
-    	</div><!--movie-card-->
-
-    	<div class="movie-card">
-    		<div class="movie-header">
-    			<div class="header-icon-container">
-    				<a href="#">
-    					<i class="material-icons header-icon"></i>
-    				</a>
-    			</div>
-    		</div><!--movie-header-->
-            <img src="http://cdn.collider.com/wp-content/uploads/2017/05/blade-runner-2049-poster-ryan-gosling.jpeg" alt="bladeRunner" class="moviebg">
-    		<div class="movie-content">
-    			<div class="movie-content-header">
-    				<a href="#">
-    					<h3 class="movie-title">Blade Runner 2049</h3>
-    				</a>
-    			</div>
-    			<div class="movie-info">
-    				<div class="info-section">
-    					<label>Release Date & Time</label>
-    					<span>Mon 16 Oct - 10:00PM</span>
-    				</div><!--date,time-->
-    				<div class="info-section">
-    					<label>Ticket Price</label>
-    					<span>50 $</span>
-    				</div><!--ticket price-->
-    			</div>
-    		</div><!--movie-content-->
-    	</div><!--movie-card-->
+        @foreach ($films as $film)
+            <div class="movie-card">
+        		<div class="movie-header manOfSteel">
+        			<div class="header-icon-container">
+        				<a href="{{ url('/film/'.$film->id) }}">
+        					<i class="material-icons header-icon"></i>
+        				</a>
+        			</div>
+        		</div><!--movie-header-->
+                <img src="{{ $film->photo }}" alt="manOfSteel" class="moviebg">
+        		<div class="movie-content">
+        			<div class="movie-content-header">
+        				<a href="{{ url('/film/'.$film->id) }}">
+        					<h3 class="movie-title">{{ $film->name }}</h3>
+        				</a>
+        			</div>
+        			<div class="movie-info">
+        				<div class="info-section">
+        					<label>Release Date</label>
+        					<span>{{ date("M d, Y", strtotime($film->release_date)) }}</span>
+        				</div><!--date,time-->
+        				<div class="info-section">
+        					<label>Ticket Price</label>
+        					<span>{{ $film->ticket_price }} $</span>
+        				</div><!--ticket price-->
+        			</div>
+        		</div><!--movie-content-->
+        	</div><!--movie-card-->
+        @endforeach
 
     </div><!--container-->
 @endsection
