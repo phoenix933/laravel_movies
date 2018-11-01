@@ -7,13 +7,11 @@
 @endsection
 
 @section('content')
-    @if(old('title') != null)
-        @if($errors->count() == 0)
+    @if(session('success'))
         <div class="card text-white bg-success">
           <div class="card-header">Success</div>
-          <div class="card-body">Film Added Successfully.</div>
+          <div class="card-body">{{session('success')}}</div>
         </div>
-        @endif
     @endif
     <div class="card">
         <form action="{{ route('films.store') }}" method="post" enctype="multipart/form-data">

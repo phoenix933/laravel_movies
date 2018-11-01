@@ -72,7 +72,7 @@ class FilmController extends Controller
         }
         $film->save();
         $film->genres()->attach($request->genre);
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Film Added Successfully.');
     }
 
     /**
