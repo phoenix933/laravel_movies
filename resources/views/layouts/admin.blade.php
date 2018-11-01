@@ -39,7 +39,7 @@
           <a class="nav-link" href="{{ route('adminPanel') }}">Admin Panel</a>
         </li>
         <li class="nav-item px-3">
-          <a class="nav-link" href="{{ route('home') }}">Home Page</a>
+          <a class="nav-link" href="{{ route('welcome') }}">Home Page</a>
         </li>
       </ul>
       <ul class="nav navbar-nav ml-auto">

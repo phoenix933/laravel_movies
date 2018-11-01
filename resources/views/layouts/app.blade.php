@@ -53,7 +53,7 @@
                         @else
                             @if(\Auth::id() < 2)
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('adminPanel') }}">{{ __('Dushboard') }}</a>
+                                <a class="nav-link" href="{{ route('adminPanel') }}">{{ __('Dashboard') }}</a>
                             </li>
                             @endif
                             <li class="nav-item dropdown">
